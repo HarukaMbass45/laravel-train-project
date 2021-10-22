@@ -1,9 +1,9 @@
 up:
-	docker compse up -d
+	docker compose up -d
 build:
 	docker compose build --no-cache --force-rm
 laravel-install:
-	docker compose exec app composer create-project --prefer-dist laravel/laraved .
+	docker compose exec app composer create-project --prefer-dist laravel/laravel .
 create-project:
 	mkdir -p backend
 	@make build
@@ -41,7 +41,7 @@ restart:
 	@make down
 	@make up
 destroy:
-	docker compose down --rmi all --voluems --remove-orphans
+	docker compose down --rmi all --volumes --remove-orphans
 destroy-volumes:
 	docker compose down --volumes --remove-orphans
 ps:
